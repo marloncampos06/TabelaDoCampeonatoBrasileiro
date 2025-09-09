@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tabela Brasileirão 2025</title>
+    <style>
+        table { border-collapse: collapse;
+         width: 90%;
+          margin: auto;
+          }
+
+        th, td { border: 1px solid #333;
+         padding: 8px;
+         text-align: center;
+          }
+
+        th { background-color: #ffcc00;
+        }
+
+        h1 { text-align: center;
+         margin-top: 20px;
+          }
+
+        form { text-align: center;
+         margin: 10px 0;
+         }
+
+        input { margin: 2px;
+         padding: 5px;
+         }
+
+        img { width: 30px;
+         height: 30px;
+          }
+
+    </style>
+</head>
+<body>
+<h1>
+    <img src="https://api.api-futebol.com.br/images/competicao/brasileiro-seriea.png">
+     Tabela Brasileirão 2025</h1>
+
+<table>
+    <tr>
+        <th>Escudo</th>
+        <th>Clube</th>
+        <th>Jogos</th>
+        <th>Vitórias</th>
+        <th>Empates</th>
+        <th>Derrotas</th>
+        <th>Gols Pró</th>
+        <th>Gols Contra</th>
+        <th>Saldo</th>
+        <th>Pontos</th>
+    </tr>
+    <tr th:each="clube : ${clubes}">
+        <td><img th:src="${clube.escudoUrl}" alt="Escudo"></td>
+        <td th:text="${clube.nome}"></td>
+        <td th:text="${clube.jogos}"></td>
+        <td th:text="${clube.vitorias}"></td>
+        <td th:text="${clube.empates}"></td>
+        <td th:text="${clube.derrotas}"></td>
+        <td th:text="${clube.golsPro}"></td>
+        <td th:text="${clube.golsContra}"></td>
+        <td th:text="${clube.saldoGols}"></td>
+        <td th:text="${clube.pontos}"></td>
+    </tr>
+
+</table>
+</body>
+</html>
