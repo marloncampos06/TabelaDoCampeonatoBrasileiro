@@ -2,6 +2,7 @@ package com.marlon.brasileirao.service;
 
 import com.marlon.brasileirao.model.Clube;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,13 +34,21 @@ public class TabelaService {
         clubes.add(new Clube("Mirassol", 21, 4, 6, 11, 16, 30, "https://i.pinimg.com/1200x/c5/99/e0/c599e0b19b9816ce39439a37820d927c.jpg"));
     }
 
-    public List<Clube> listarClubes() { return clubes; }
+    public List<Clube> listarClubes() {
+        return clubes;
+    }
 
-    public void adicionarClube(Clube clube) { clubes.add(clube); }
+    public void adicionarClube(Clube clube) {
+        clubes.add(clube);
+    }
 
-    public void removerClube(String nome) { clubes.removeIf(c -> c.getNome().equalsIgnoreCase(nome)); }
+  public void removerClube(String nome) {
+        clubes.removeIf(
+                c -> c.getNome().equalsIgnoreCase(nome));
+    }
 
     public Clube buscarClube(String nome) {
-        return clubes.stream().filter(c -> c.getNome().equalsIgnoreCase(nome)).findFirst().orElse(null);
+        return clubes.stream().filter(
+                c -> c.getNome().equalsIgnoreCase(nome)).findFirst().orElse(null);
     }
 }

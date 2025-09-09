@@ -12,7 +12,9 @@ public class TabelaController {
 
     private final TabelaService tabelaService;
 
-    public TabelaController(TabelaService tabelaService) { this.tabelaService = tabelaService; }
+    public TabelaController(TabelaService tabelaService) {
+        this.tabelaService = tabelaService;
+    }
 
     @GetMapping
     public String verTabela(Model model) {
@@ -21,15 +23,17 @@ public class TabelaController {
     }
 
     @PostMapping("/adicionar")
-    public String adicionarClube(@RequestParam String nome,
-                                 @RequestParam int jogos,
-                                 @RequestParam int vitorias,
-                                 @RequestParam int empates,
-                                 @RequestParam int derrotas,
-                                 @RequestParam int golsPro,
-                                 @RequestParam int golsContra,
-                                 @RequestParam String escudoUrl) {
-        tabelaService.adicionarClube(new Clube(nome, jogos, vitorias, empates, derrotas, golsPro, golsContra, escudoUrl));
+    public String adicionarClube(
+            @RequestParam String nome,
+            @RequestParam int jogos,
+            @RequestParam int vitorias,
+            @RequestParam int empates,
+            @RequestParam int derrotas,
+            @RequestParam int golsPro,
+            @RequestParam int golsContra,
+            @RequestParam String escudoUrl) {
+        tabelaService.adicionarClube(
+                new Clube(nome, jogos, vitorias, empates, derrotas, golsPro, golsContra, escudoUrl));
         return "redirect:/tabela";
     }
 

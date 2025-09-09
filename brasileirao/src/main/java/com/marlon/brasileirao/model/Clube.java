@@ -31,7 +31,7 @@ public class Clube {
     public int getPontos() { return vitorias*3 + empates; }
     public int getSaldoGols() { return golsPro - golsContra; }
     public String getEscudoUrl() { return escudoUrl; }
-    
+
     public void setJogos(int jogos) { this.jogos = jogos; }
     public void setVitorias(int vitorias) { this.vitorias = vitorias; }
     public void setEmpates(int empates) { this.empates = empates; }
